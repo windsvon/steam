@@ -4,6 +4,9 @@
     delay = false;
     showFooter = false;
     timeOut = 0;
+    $("#menu").click(function() {
+      $('#container-nav-top ul').toggleClass('active');
+    });
     $('#fullpage').fullpage({
       resize: true,
       css3: true,

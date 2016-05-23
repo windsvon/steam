@@ -3,6 +3,9 @@ $(document).ready ->
 	showFooter = false
 	timeOut = 0
 
+	$("#menu").click ->
+		$('#container-nav-top ul').toggleClass('active')
+		return
 
 	$('#fullpage').fullpage 
 		# anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'sisthPage', 'seventhPage', 'eighthPage','ninthPage', 'tenthPage']
@@ -34,7 +37,7 @@ $(document).ready ->
                 			setTimeout undelay, 500
                 			return false
                 		else
-                			if last then return true 
+                			if last then return true
         	        		$('.page4 .active')
         	        		.removeClass('active')
         	        		.next()
@@ -42,8 +45,8 @@ $(document).ready ->
         	        		delay = true
                 			return false
 
-                	if index is 13 
-                		change =  -> 
+                	if index is 13
+                		change =  ->
                 			showFooter = false
                 			console.log(showFooter)
                 			return
@@ -54,8 +57,8 @@ $(document).ready ->
         	        	else if nextIndex is 12 and showFooter
                 			$('.page13').removeClass('footer-active')
                 			setTimeout change, 1000
-                			return false		
-        	        	else 
+                			return false
+        	        	else
         	        		$('.page13').removeClass('footer-active')
         	        		showFooter = false
         	        		return true

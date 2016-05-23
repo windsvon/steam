@@ -113,6 +113,21 @@ body {
 	}
 }
 
+#attend-bottom {
+  display: none
+  width: 100%
+  padding: 5px
+  text-align: center
+  background-color: #007cd1
+  font-size: 20px
+  z-index: 2
+  position: fixed
+  bottom: 0
+  a {
+    color: white
+  }
+}
+
 
 // 设置导航栏的动画效果
 .fp-viewing-page {	
@@ -203,6 +218,7 @@ body {
 				display: block
 				transform: translateY(0px)
 				overflow: hidden
+				transition: height 0.5s
 				li {
 					width: 100%
 					display: block
@@ -215,10 +231,13 @@ body {
 						&.active, &:hover {
 							color: lighten(#666, 30)
 						}		
-					}	
+					}
+					&:hover {
+						background: lighten(#666, 80)
+					}
 				}
 				&.active {
-					height: 1000px
+					height:1000px
 				}
 			}
 			#menu {
@@ -231,6 +250,11 @@ body {
 			}		
 		}		
 	}
+
+    #attend-bottom {
+      display: block
+    }
+
 	.fp-viewing-page {	
 		&1 {
 			#nav-top {
@@ -253,6 +277,21 @@ body {
 		font-size: 14px
 		line-height: 28px
 	}
+}
+/* 响应式
+* --------------------------------------- */
+@media screen and (max-width: 480px) {
+  .content {
+    h1 {
+      color: lighten(#666, 30)
+      font-size: 20px
+      margin-bottom: 25px
+    }
+    p {
+      font-size: 10px
+      line-height: 20px
+    }
+  }
 }
 
 
@@ -885,17 +924,18 @@ body {
 	overflow: hidden
 	.container {
 		width: 960px
-		height: 100%
+        height: 100%
 		margin: auto
-		display: inline-block
-		position: relative
 		transform: translateY(0)
 		transition: transform 0.5s
+        position: relative
 		.content {
-			z-index: 1
+            width: 30%
+            margin-top: 30%
+            position: absolute
+            right: 100px
 			color: black
-			margin-top: 30%
-			text-align: left
+            text-align: left
 			transform: translateX(400px)
 			transition: transform 1s
 			h1 {
@@ -903,8 +943,9 @@ body {
 			}
 		}
 		img {
-			height: 100%
-			float: left
+			position: absolute
+            left: 0
+            height: 100%
 			transform: translateY(-400px)
 			transition: transform 1s
 		}
@@ -912,10 +953,10 @@ body {
 	}
 	
 	.footer {
-		border-top: 1px solid lighten(#666, 30)
+		border-top: 1px solid lighten(#666, 55)
 		width: 960px
-		height: 80px
-		line-height: 80px
+		height: 60px
+		line-height: 60px
 		position: absolute
 		left: 0
 		right: 0
@@ -925,7 +966,7 @@ body {
 		transition: transform 0.5s
 		#nav {
 			position: absolute
-			top: -80px
+			top: -60px
 			
 			a {
 				color: lighten(#666, 30)
@@ -947,6 +988,10 @@ body {
 			position: absolute
 			top: -60px
 			right: 0
+            p {
+              display: none
+              color: lighten(#666,30)
+            }
 			a {
 				position: relative
 				margin: 40px
@@ -973,7 +1018,7 @@ body {
 .fp-viewing-page13 .page13 {
 	.container {
 		.content {
-			transform: translateX(0)
+			transform: translateX(50px)
 		}
 		img {
 			transform: translateY(0)
@@ -999,16 +1044,36 @@ body {
 	.page13 {
 		.container {
 			width: 100%
+
+            transform: translateY(-200px)
 			.content {
-				transform: translateX(0)
+				transform: translateX(50px)
 			}
 			img {
 				transform: translateY(0)
 			}
 		}
 		.footer {
-			width: 100%
-			display: none
+			width: 90%
+            transform: translateY(-200px)
+            #nav a {
+              font-size: 12px
+            }
+            #social-media {
+              border-bottom: 1px solid lighten(#666,55)
+              left: 0
+              right: 0
+              top: -160px
+              line-height: 50px
+              p {
+                display: block
+              }
+            }
+            #license {
+              margin-top: 10px
+              font-size: 12px
+              line-height: 30px
+            }
 		}
 	}
 }
