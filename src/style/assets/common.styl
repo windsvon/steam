@@ -1,0 +1,158 @@
+.header-container {
+    .header {
+        height: 48px;
+        line-height: 48px;
+        background: $deep-black;
+        .logo-block {
+            position: absolute;
+            height: 48px;
+            line-height: 48px;
+        }
+    }
+    .logo {
+        margin-left: 16px;
+        vertical-align: middle;
+    }
+    .user-group {
+        float: right;
+        margin: 0 8px 0 0;
+        .user, .search {
+            height: 40px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            color: $icon-color;
+            font-size: 20px;
+        }
+        .search-block {
+            display: none;
+        }
+    }
+    .nav {
+        width: 100%;
+        height: 40px;
+        background: $deep-black;
+        text-align: center;
+        display: table;
+        .nav-item {
+            display: table-cell;
+            color: $text-color;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 23px;
+            font-size: $font-size-mobile + 4px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            &:hover, &.active {
+                border-bottom: 2px solid $standard-blue;
+                color: $standard-blue;
+            }
+        }
+        @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+            width: 375px;
+            height: 48px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            left: 170px;
+        }
+    }
+    @media (min-width: $breakpoint-2) {
+        .header {
+            height: 64px;
+            line-height: 64px;
+            background: $header-background;
+            .logo-block {
+                position: absolute;
+                width: 196px;
+                height: 64px;
+                line-height: 64px;
+                background: $deep-black;
+            }
+            .logo {
+                vertical-align: middle;
+            }
+        }
+        .user-group {
+            float: right;
+            margin: 0 24px 0 0;
+            .user {
+                height: 32px;
+                line-height: 32px;
+                width: 32px;
+                text-align: center;
+                color: $icon-color;
+                font-size: 20px;
+            }
+            .search {
+                display: none;
+            }
+            .search-block {
+                position: relative
+                display: inline-block;
+                .search {
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -20px;
+                }
+                .search-box {
+                    border: none;
+                    outline: none;
+                    height: 32px;
+                    width: 200px;
+                    padding-left: 32px;
+                    border-radius: 4px;
+                    background: $deep-black;
+                    color: #888888;
+                    margin-right: 16px;
+                    font-size: $font-size-web;
+                }
+            }
+        }
+
+
+        .nav {
+            background: none;
+            width: 320px;
+            height: 64px;
+            text-align: center;
+            display: table;
+            position: absolute;
+            top: 0;
+            left: 196px;
+            .nav-item {
+                display: table-cell;
+                color: $text-color;
+                height: 40px;
+                line-height: 40px;
+                padding: 0 20px;
+                font-size: $font-size-mobile;
+                box-sizing: border-box;
+                vertical-align: middle;
+                border-right: 1px solid black
+                &:hover, &.active {
+                    border-bottom: 2px solid $standard-blue;
+                    color: $standard-blue;
+                }
+            }
+        }
+    }
+}
+
+
+initBlockList(n1, n2, n3, total)
+
+    .block-list {
+        float: left;
+        box-sizing: border-box;
+    }
+
+    for n in (1..total)
+        .block-{n} {
+            width: percentage(1/n1)
+        }
+
+
+

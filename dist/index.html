@@ -2,189 +2,131 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>雄鲸主页——练习</title>
-    <link rel="stylesheet" type="text/css" href="lib/jquery.fullPage.css">
-    <link rel="stylesheet" type="text/css" href="style/index.css">
-    <script type="text/javascript" src="lib/jquery-1.12.0.js"></script>
-    <script type="text/javascript" src="lib/jquery.fullPage.js"></script>
-    <script type="text/javascript" src="lib/jquery.easings.min.js"></script>
-    <script type="text/javascript" src="script/index.js"></script>
+    <title>蒸汽档案馆</title>
+    <link rel="stylesheet" type="text/css" href="lib/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="style/dark/index.css">
     <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
     <!--百度站长-->
     <meta name="baidu-site-verification" content="URj2duGLiO">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="WINKPAX 在线商城，wpax store，WINKPAX 游戏机官方网站，全面介绍Winkpax游戏机的产品特性，规格参数，价格，官方样照，适用配件，产品多角度演示以及最新促销和订购信息，令您便于了解 WINKPAX 游戏机产品，让WINKPAX游戏机为您的娱乐生活增添乐趣！">
     <meta name="keywords" content="WINKPAX、WINKPAX官网、winkpax、pax、微客、游戏平板、平板游戏机、众筹游戏机、众筹平板、游戏掌机、手柄游戏机、把 X-BOX 做成平板、电视游戏、雄鲸、雄鲸网络、雄鲸科技、上海雄鲸、上海雄鲸网络技术有限公司">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-web-app-capable" content="yes">
     <!--Set render engine for 360 browser-->
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"><!-- UC强制全屏 -->
     <meta name="full-screen" content="yes"><!-- QQ强制全屏 -->
     <meta name="x5-fullscreen" content="true">
   </head>
-  <body>
-    <div id="nav-top">
-      <div id="container-nav-top"><img src="img/logo.png" alt="winkpax_logo">
-        <ul>
-          <li><a href="#">首页</a></li>
-          <li><a href="#" class="active">WINK PAX</a></li>
-          <li><a href="#">社区</a></li>
-        </ul><img id="menu" src="img/menu.png" alt="menu">
-      </div>
-    </div>
-    <div id="nav-bar">
-      <div id="container-nav-bar"><img src="img/logo.png" alt="winkpax_logo">
-        <ul id="menu">
-          <li id="overview" data-menuanchor="page1"><a href="#page1">概览</a></li>
-          <li id="function" data-menuanchor="page2"><a href="#page2">功能</a></li>
-          <li id="design" data-menuanchor="page7"><a href="#page7">工艺设计</a></li>
-          <li id="power" data-menuanchor="page11"><a href="#page11">配置</a></li>
-        </ul>
-        <div id="attend"><a href="#">立即参与众筹</a></div>
-      </div>
-    </div>
-    <div id="attend-bottom"><a href="#">立即参与众筹</a></div>
-    <div id="fullpage">
-      <div class="section page1">
-        <div class="container"><img src="img/winkpax/winkpax1.png" alt="winkpax">
-          <div class="content">
-            <h1>WINK PAX<br>把X-BOX做成平板</h1>
-            <p>WINK PAX 是一台兼备了 PSP 与 X-BOX 功能的游戏机，它由一块8英寸的游戏平板加上一款蝙蝠式可折叠手柄组合而成。是一款双端、双操控、多场景的游戏机产品。</p>
+  <body class="theme-dark">
+    <div class="container">
+      <div class="header-container">
+        <div class="header">
+          <div class="logo-block"><img src="img/logo-mobile.jpg" class="logo"></div>
+          <div class="user-group">
+            <div class="search-block"><a href="#" class="search fa fa-search"></a>
+              <input type="search" placeholder="搜索您感兴趣的话题" class="search-box">
+            </div><a href="#" class="search fa fa-search"></a><a href="#" class="user fa fa-user"></a>
           </div>
         </div>
+        <div class="nav"><a href="#" class="nav-item active">问答</a><a href="#" class="nav-item">攻略</a><a href="#" class="nav-item">讨论</a><a href="#" class="nav-item">周边</a></div>
       </div>
-      <div class="section page2">
-        <div class="container">
-          <div class="content">
-            <h1>一台可媲美PSP体验的游戏掌机</h1>
-            <p>在插入式使用模式下，WINK PAX 是一台比 PSP 实用性更强的游戏掌机。搭载安卓5.1系统，同时支持焦点和触摸操作，可完美模拟多种设备下的游戏运行。WINK PAX 自有的应用商店 Wink Store 提供近500款手柄操控游戏。</p>
-          </div><img src="img/winkpax/winkpax2.png" alt="winkpax">
-        </div>
-      </div>
-      <div class="section page3">
-        <div class="container">
-          <div class="content">
-            <h1>与X-BOX一般无二的游戏主机</h1>
-            <p>WINK PAX 在分离式模式下，通过 HDMI 和电视机链接，成为一台游戏主机，通过蓝牙手柄完成远端操控，通过云端计算方式让用户体验到 X-BOX 特有的游戏大作</p>
-          </div>
-        </div>
-      </div>
-      <div class="section page4">
-        <div class="background"><img src="img/winkpax/situation1@2x.png" alt="morning" class="morning active"><img src="img/winkpax/situation2@2x.png" alt="morning" class="forenoon"><img src="img/winkpax/situation3@2x.png" alt="morning" class="noon"><img src="img/winkpax/situation4@2x.png" alt="morning" class="night"></div>
-        <div class="container">
-          <div class="content">
-            <div class="description">
-              <div class="morning active">
-                <h1>8:00 AM</h1>
-                <p>上班途中体验掌机游戏</p>
-              </div>
-              <div class="forenoon">
-                <h1>10:00 AM</h1>
-                <p>办公时可帮助您的创作工具</p>
-              </div>
-              <div class="noon">
-                <h1>13:00 PM</h1>
-                <p>午休时观看丰富的视频内容</p>
-              </div>
-              <div class="night">
-                <h1>22:00 PM</h1>
-                <p>睡觉前在客厅畅玩主机游戏</p>
+      <div class="content-container">
+        <div class="left-content-container"></div>
+        <div class="right-content-container">
+          <div class="page-introduction">您身边最权威的STEAM回答平台</div>
+          <div class="banner content-block">
+            <div class="block-list block-1">
+              <div class="banner-item"><img src="img/mobile/ad-1.jpg" class="ad-image">
+                <p class="ad-description">玩FF15之前最好先看看</p>
               </div>
             </div>
-            <div id="timeline">
-              <div class="morning active"><span>8:00</span>
-                <div></div>
+            <div class="block-list block-2">
+              <div class="banner-item"><img src="img/mobile/ad-2.jpg" class="ad-image">
+                <p class="ad-description">玩FF15之前最好先看看</p>
               </div>
-              <div class="forenoon"><span>10:00</span>
-                <div></div>
+            </div>
+            <div class="block-list block-3">
+              <div class="banner-item"><img src="img/mobile/ad-3.jpg" class="ad-image">
+                <p class="ad-description">玩FF15之前最好先看看</p>
               </div>
-              <div class="noon"><span>13:00</span>
-                <div></div>
-              </div>
-              <div class="night"><span>22:00</span>
-                <div></div>
+            </div>
+            <div class="block-list block-4">
+              <div class="banner-item"><img src="img/mobile/ad-4.jpg" class="ad-image">
+                <p class="ad-description">玩FF15之前最好先看看</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="section page5">
-        <div class="container">
-          <div class="content">
-            <h1>一台有态度的游戏机</h1>
-            <p>WINK PAX 作为一款有态度的游戏机，绝不仅仅局限于单纯的手游的移植。我们挑选了50款热门主机游戏大作，包括了《刺客信条-黑旗》、《NBA2k》等X-BOX才有的游戏内容；240款模拟器游戏；100款定制化的手柄移动游戏，并与Gameloft、育碧等大厂商合作。不仅如此，WINK PAX 还会保证每月甚至每周都会提供源源不断的游戏内容。</p>
+          <div class="hot-wanted content-block">
+            <div class="title"><a href="#" class="show-more">查看全部悬赏</a><i class="fa fa-star"></i><a href="#" class="title-text">热门悬赏</a></div>
+            <div class="content">
+              <div class="block-list-large block-1">
+                <div href="#" class="wanted-item">
+                  <div class="award-amount"><span>240</span></div>
+                  <p class="wanted-item-content">FF14终极典藏</p>
+                </div>
+              </div>
+              <div class="block-list-large block-2">
+                <div href="#" class="wanted-item">
+                  <div class="award-amount"><span>20</span></div>
+                  <p class="wanted-item-content">FF14终极典藏版怎么限定月PS4是可以玩的吗？</p>
+                </div>
+              </div>
+              <div class="block-list-large block-3">
+                <div href="#" class="wanted-item">
+                  <div class="award-amount"><span>8</span></div>
+                  <p class="wanted-item-content">FF14终极典藏版怎么限定月PS4是可以玩的吗？</p>
+                </div>
+              </div>
+              <div class="block-list-large block-4">
+                <div href="#" class="wanted-item">
+                  <div class="award-amount"><span>240</span></div>
+                  <p class="wanted-item-content">FF14终极典藏</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="img-container"><img src="img/winkpax/game.jpg" alt="game"></div>
-        </div>
-      </div>
-      <div class="section page6">
-        <div class="container">
-          <div class="content">
-            <h1>一部有内容的私人影院</h1>
-            <p>WINK PAX 通过 HDMI 链接大屏幕即可观看视频内容，海量视频内容是普通电视机机顶盒的三倍。通过 WINK PAX 内置的应用，可以在大屏幕上观看“爱奇艺”、“腾讯视频”、“搜狐视频”等平台的节目，最新美剧、体育直播免费观看，不再受视频会员费的困扰</p>
+          <div class="hot-topics content-block">
+            <div class="title"><i class="fa fa-star"></i><a href="#" class="title-text">热门话题</a></div>
+            <div class="hot-topic-list"><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a><a href="#" class="topic">【问答】《FF15》终极典藏版 限定月亮PS4开箱</a></div>
           </div>
-          <div class="img-container"><img src="img/winkpax/tv.jpg" alt="game"></div>
-        </div>
-      </div>
-      <div class="section page7">
-        <div class="container">
-          <div class="content">
-            <h1>钢铁科技、冷金属、强散热</h1>
-            <p>以 IRON-man 钢铁侠面盔为理念的机身设计展现出独树一帜的视觉风格。背部采用一体式 “冷金属” 工艺，即使在最高功耗的游戏体验下仍能够保持优秀的散热性。</p>
+          <div class="recommended content-block">
+            <div class="title"><a href="#" class="show-more">查看全部悬赏</a><i class="fa fa-star"></i><a href="#" class="title-text">周边推荐</a></div>
+            <div class="content">
+              <div class="block-list-large"><a href="#" class="recommended-item"><img src="img/mobile/sample-1.jpg" class="recommended-cover">
+                  <div class="recommended-description"><span class="category">[壁纸]</span><span class="name">MORTAL COMBAT X</span></div></a></div>
+              <div class="block-list-large"><a href="#" class="recommended-item"><img src="img/mobile/sample-2.jpg" class="recommended-cover">
+                  <div class="recommended-description"><span class="category">[视频]</span><span class="name">35分钟游戏演示</span></div></a></div>
+              <div class="block-list-large"><a href="#" class="recommended-item"><img src="img/mobile/sample-3.jpg" class="recommended-cover">
+                  <div class="recommended-description"><span class="category">[音乐]</span><span class="name">热门经典游戏音乐剪辑</span></div></a></div>
+              <div class="block-list-large"><a href="#" class="recommended-item"><img src="img/mobile/sample-4.jpg" class="recommended-cover">
+                  <div class="recommended-description"><span class="category">[周边]</span><span class="name">FPS游戏周边美图</span></div></a></div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="section page8">
-        <div class="container">
-          <div class="content">
-            <h1>蝙蝠结构、黑金属、双马达</h1>
-            <p>WINK PAX 的手柄由 X-BOX 的御用设计师操刀，采用了 BAT-man 的作为设计灵感，“黑金属” 材质连杆让 PAX 在激烈的游戏动作下保持稳定的结构。同时 BAT-man 手柄配备双振动马达，为游戏机体验注入更真实的代入感。</p>
-          </div><img src="img/winkpax/handle2.png" alt="handle">
-        </div>
-      </div>
-      <div class="section page9">Amazing Design</div>
-      <div class="section page10">
-        <div class="container">
-          <div class="content">
-            <h1>双金属工艺、轻巧便捷</h1>
-            <p>虽然 WINK PAX 的平板和手柄采用了双金属工艺，仍然很好的做到了轻巧便捷的特点。组合后整体重量仅为730g，比一台 800 克的 surface 更加轻薄。</p>
+          <div class="game-highlight content-block">
+            <div class="title"><i class="fa fa-star"></i><a href="#" class="title-text">热门游戏</a></div>
+            <div class="content">
+              <div class="block-list-large"><a href="#" class="game-highlight-item"><img src="img/mobile/game-icon-1.jpg" class="game-icon">
+                  <p class="game-name">飞舞的樱花：恶魔内战</p></a></div>
+              <div class="block-list-large"><a href="#" class="game-highlight-item"><img src="img/mobile/game-icon-2.jpg" class="game-icon">
+                  <p class="game-name">影子战术：将军之刃</p></a></div>
+              <div class="block-list-large"><a href="#" class="game-highlight-item"><img src="img/mobile/game-icon-3.jpg" class="game-icon">
+                  <p class="game-name">天空战舰：死亡之翼</p></a></div>
+              <div class="block-list-large"><a href="#" class="game-highlight-item"><img src="img/mobile/game-icon-4.jpg" class="game-icon">
+                  <p class="game-name">机械狂奔</p></a></div>
+              <div class="block-list-large"><a href="#" class="game-highlight-item"><img src="img/mobile/game-icon-1.jpg" class="game-icon">
+                  <p class="game-name">使命召唤13： 无限战争</p></a></div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="section page11">
-        <div class="container">
-          <div class="content">
-            <h1>最完美的细节呈现</h1>
-            <p>WINK PAX 搭配8英寸屏幕与 FULLHD 超清显示屏，采用 IPS 全贴合工艺可视角达到178度，让您无论从哪个角度欣赏，都可以看到色彩鲜明、饱和自然的优质画面。并且 IPS 全贴合工艺优化了液晶层的厚度，使 WINK PAX 更轻薄、更省电。</p>
-          </div>
-          <div class="img-container"><img src="img/winkpax/screen.jpg" alt="game"></div>
-        </div>
-      </div>
-      <div class="section page12">
-        <div class="container">
-          <div class="content">
-            <h1>一台旗舰性能的平板电脑</h1>
-            <p>WINK PAX 搭载八核64位旗舰处理器，八颗核心可同时全速运转，多任务处理高效流畅。WINK PAX还配备了2GB运行内存，相比同类产品的1GB运行内存，整整提升一倍运行空间。不仅如此，32GB存储空间也可满足各类游戏大作的需求。</p>
-          </div>
-        </div>
-      </div>
-      <div class="section page13">
-        <div class="container"><img src="img/winkpax/middle/battery@2x.jpg" alt="battery">
-          <div class="content">
-            <h1>500小时待机，<br>14小时不间断使用</h1>
-            <p>WINK PAX 充分考虑到长时间打游戏的用户体验，标配 5400mAh 高密度大容量电池，大于 ipad mini (4490mAh)、四倍于 PSP（1200mAh)。出色的续航令你有充足的时间享受 WINK PAX 带来的乐趣。</p>
-          </div>
-        </div>
-        <div class="footer">
-          <div id="nav"><a href="#">公司简介</a><a href="#">加入我们</a><a href="#">联系我们</a><a href="#">开发者</a></div>
-          <div id="social-media">
-            <p>关注我们</p><a href="#"><img src="img/footer/qq.png" alt="QQ"><img src="img/footer/qq-h.png" alt="QQ" class="active"></a><a href="#"><img src="img/footer/weixin.png" alt="Wechat"><img src="img/footer/weixin-h.png" alt="Wechat" class="active"></a><a href="#"><img src="img/footer/weibo.png" alt="Weibo"><img src="img/footer/weibo-h.png" alt="Weibo" class="active"></a>
-          </div>
-          <div id="license">
-            <p>Copyright2015 huge whales Inc. All rights reserved.沪ICP备15019655号  增值电信业务经营许可证：沪 B2-20160022</p>
-          </div>
+          <div class="license-info">沪ICP备15019655号  增值电信业务经营许可证：沪 B2-20160022</div>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="script/common.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="lib/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="script/main.js"></script>
   </body>
 </html>

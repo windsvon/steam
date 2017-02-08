@@ -1,1081 +1,718 @@
-@import "reset.styl"
+//if theme == "dark"
+//    @import "mixin/variables-dark.styl"
+//
+//if theme == "light"
+//    @import "mixin/variables-light.styl"
 
-body {
-	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
-}
-
-.section {
-	font-size 20px
-	text-align center
-	color black
-	overflow-x: hidden
-}
-
-/* Header
- * --------------------------------------- */
-
-#nav-top {
-	position: fixed
-	top: -45px
-	background-color: rgba(28,28,28,0.7)
-	width: 100%
-	height: 44px
-	z-index: 1
-	border-bottom: 1px solid #3684c3
-	transition: transform 1s
-	
-	#container-nav-top {
-		width: 960px
-		margin: auto
-		height: 44px
-		line-height: 44px
-		img {
-			height: 30px
-			vertical-align: middle
-		}
-		ul {
-			display: inline-block
-			margin-left:100px
-			li {
-				display: inline-block
-				margin-right: 50px
-				font-size: 15px
-				a {
-					text-decoration: none
-					color: #666
-					&.active, &:hover {
-						color: lighten(#666, 30)
-					}		
-				}	
-			}
-		}
-		#menu {
-			display: none
-		}
-	}
-}
-
-#nav-bar {
-	position: fixed
-	top: 0
-	z-index: 1
-	width: 100%
-	background-color: rgba(28,28,28,0.9)
-	height: 44px
-	transition: transform 1s
-	#container-nav-bar {
-		width: 960px
-		margin-left: 20%
-		line-height: 44px
-		img {
-			height: 25px
-			vertical-align: middle
-			margin-left: 10px
-			transition: opacity 1s
-		}
-		ul {
-			display: inline-block
-			margin-left: 300px
-			font-size: 0
-			vertical-align: middle
-			li {
-				display: inline-block
-				vertical-align: middle
-				padding: 0 30px 0 30px
-				border-right: 1px solid #666
-				height: 30px
-				font-size: 15px
-				line-height: 30px				
-				a {
-					color: #666
-					&:hover {
-						color: lighten(#666, 30)
-					}
-				}
-			}
-		
-		}
-		#attend {
-			display: inline-block
-			border: 1px solid #007cd1
-			border-radius: 5px
-			height: 30px
-			width: 150px
-			line-height: 30px
-			text-align: center
-			background-color: #007cd1
-			margin-left: 20px
-			a {
-				color: white
-				font-size: 15px
-			}
-		}
-	}
-}
-
-#attend-bottom {
-  display: none
-  width: 100%
-  padding: 5px
-  text-align: center
-  background-color: #007cd1
-  font-size: 20px
-  z-index: 2
-  position: fixed
-  bottom: 0
-  a {
-    color: white
-  }
-}
+@import "mixin/reset.styl"
 
 
-// 设置导航栏的动画效果
-.fp-viewing-page {	
-	&1 {
-		#nav-top {
-			transform: translateY(45px)			
-		}
-		#nav-bar {
-			transform: translateY(45px)
-			#container-nav-bar {
-				img {
-					opacity: 0
-				}
-				ul {
-					#overview {
-						a {
-							color: lighten(#666, 30)
-						}
-					}
-				}
-			}
-		}		
-	}
+$standard-blue = #76dbff;
+$deep-black = #13181e;
+$block-background = rgba($deep-black, 0.4);
+$background = #343434;
+$standard-orange = #e9a43d;
+$text-color = #dddddd;
+$icon-color = #dddddd;
+$header-background = rgba(#ffffff, 5%)
+$content-background = #2a3238
 
-	&2, &3, &4, &5, &6 {
-		#nav-bar {
-			#container-nav-bar {
-				ul {
-					#function {
-						a {
-							color: lighten(#666, 30)
-						}
-					}
-				}
-			}
-		}		
-	}
+$font-size-mobile = 16px;
+$font-size-web = 14px;
+$icon-size = 16px;
 
-	&7, &8, &9, &10 {
-		#nav-bar {
-			#container-nav-bar {
-				ul {
-					#design {
-						a {
-							color: lighten(#666, 30)
-						}
-					}
-				}
-			}
-		}		
-	}
-
-	&11, &12, &13 {
-		#nav-bar {
-			#container-nav-bar {
-				ul {
-					#power {
-						a {
-							color: lighten(#666, 30)
-						}
-					}
-				}
-			}
-		}		
-	}			
-		
-}
-
-/* Header的响应式设计
- * --------------------------------------- */
-
-@media screen and (max-width: 960px) {
-	#nav-bar {
-		display: none
-	}
-	#nav-top {
-		top: 0
-		#container-nav-top {
-			width: 100%
-			img {
-				margin-left: 30px
-			}
-			ul {
-				width: 100%
-				height: 0px
-				background-color: #2d3237
-				margin-left:0
-				display: block
-				transform: translateY(0px)
-				overflow: hidden
-				transition: height 0.5s
-				li {
-					width: 100%
-					display: block
-					padding-left: 30px
-					font-size: 15px
-					border-bottom: 1px solid black
-					a {
-						text-decoration: none
-						color: #666
-						&.active, &:hover {
-							color: lighten(#666, 30)
-						}		
-					}
-					&:hover {
-						background: lighten(#666, 80)
-					}
-				}
-				&.active {
-					height:1000px
-				}
-			}
-			#menu {
-				display: block
-				width: 30px
-				height: 25px
-				position: absolute
-				right: 15px
-				top: 10px
-			}		
-		}		
-	}
-
-    #attend-bottom {
-      display: block
-    }
-
-	.fp-viewing-page {	
-		&1 {
-			#nav-top {
-				transform: translateY(0px)			
-			}
-		}
-	}
-}
-
-	
-/* 文字样式
- * --------------------------------------- */
-.content {
-	h1 {
-		color: lighten(#666, 30)
-		font-size: 30px
-		margin-bottom: 25px
-	}
-	p {
-		font-size: 14px
-		line-height: 28px
-	}
-}
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 480px) {
-  .content {
-    h1 {
-      color: lighten(#666, 30)
-      font-size: 20px
-      margin-bottom: 25px
-    }
-    p {
-      font-size: 10px
-      line-height: 20px
-    }
-  }
-}
+$breakpoint-1 = 640px;
+$breakpoint-2 = 1100px
 
 
-/* Page1
- * --------------------------------------- */
- 
-.page1 {
-	background: url("../img/winkpax/bg-winkpax.jpg") no-repeat center
-	background-size: cover
-	.container {
-		width: 960px
-		margin: auto
-	 	img {
-	 		width: 50%
-			transform: translateY(-400px)
-			transition: transform 1s
-	 	}
-	 	.content {
-	 		width: 30%
-	 		display: inline-block
-	 		position: relative
-	 		bottom: 100px
-	 		transform: translateX(400px)
-	 		margin-left: 20px
-	 		color: lighten(#666, 30)
-	 		text-align: left
-	 		transition: transform 1s
-	 	}
+@import "assets/common.styl";
+
+initBlockList(1, 2, 3, 3)
+
+@media (min-width: 1100px) {
+    {'.theme-' + theme} {
+        font-family: Helvetica, Tahoma, Arial, "Noto Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", SimSun, "宋体", sans-serif;
+        background: url('../../img/background.jpg') no-repeat center;
+        display: none;
+        .page-introduction {
+            display: block;
+        }
+        .license-info {
+            display: block;
+        }
+
+        .container {
+            background: url('../../img/content-background.jpg') no-repeat right;
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .content-container {
+            //background: $content-background;
+        }
+        .left-content-container {
+            background: $deep-black;
+            float: left;
+            width: 196px;
+            height: 100%;
+            margin-bottom: -10000px;
+            padding-bottom:10000px; /*距离白色底块下方的内边距为25px*/
+        }
+        .right-content-container {
+            overflow: hidden;
+            padding: 20px 0 20px 20px;
+        }
+        .title {
+            margin: 0 0 0 4px;
+            font-size: $font-size-mobile + 4px;
+            line-height: 2;
+            .show-more {
+                background: url("../../img/icon-eye.jpg") no-repeat left;
+                color: #fff;
+                float: right;
+                font-size: $font-size-mobile;
+                padding-left: 25px;
+            }
+            .title-icon {
+                display: inline-block;
+                margin-right: 12px;
+                vertical-align: middle;
+            }
+            .title-text {
+                display: inline-block;
+                color: $text-color;
+                vertical-align: top;
+            }
+            i {
+                color: $standard-blue;
+                margin-right: 8px;
+            }
+        }
+        .content-block {
+            margin-bottom: 16px;
+        }
+        .page-introduction {
+            font-size: $font-size-web;
+            color: $standard-orange;
+            line-height: 26px;
+            margin: 4px 0 8px 4px;
+        }
+
+        .game-highlight {
+            overflow: hidden;
+            .title {
+                display: none;
+            }
+            .block-list-large {
+                margin: 0;
+            }
+
+        }
+        .game-highlight-item {
+            display: block;
+            background: $deep-black;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 10px 16px;
+            border-radius: 4px;
+            width: 100%;
+            .game-icon {
+                width: 24px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 8px;
+            }
+            .game-name {
+                display: inline-block;
+                color: $text-color;
+                width: 125px;
+                font-size: $font-size-web;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                vertical-align: middle;
+            }
+        }
+        .banner {
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 16px;
+            .banner-item {
+                position: relative;
+                height: 80px;
+                width: 164px;
+                margin-bottom: 8px;
+                overflow: hidden;
+                .ad-image {
+                    width: 100%;
+                }
+                .ad-description {
+                    width: 100%;
+                    height: 20px;
+                    line-height: 20px;
+                    background: rgba(0,0,0,0.75);
+                    color: $text-color;
+                    position: absolute;
+                    bottom: 0;
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+        }
+        .hot-wanted {
+            overflow: hidden;
+            .block-list-large {
+                box-sizing: border-box;
+                float: left;
+                width: 33.33%;
+                padding: 4px;
+            }
+        }
+
+        .wanted-item {
+            display: table;
+            position: relative;
+            background: #22272d;
+            border-radius: 4px;
+            box-sizing: border-box;
+            padding: 6px 8px;
+
+            .award-amount {
+                width: 80px;
+                height: 44px;
+                line-height: 44px;
+                background: url("../../img/mobile/icon-money.png") no-repeat center;
+                float: left;
+                margin: 0 8px 0 0;
+                span {
+                    width: 32px;
+                    display: inline-block;
+                    margin-left: 40px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: $standard-orange;
+                }
+            }
+            .wanted-item-content {
+                display: table-cell;
+                vertical-align: middle;
+                width: 100%;
+                text-align: left;
+                color: $text-color;
+                font-size: $font-size-web;
+                line-height: 1.4
+            }
+        }
+        .hot-topics {
+
+        }
+        .hot-topic-list {
+            overflow: hidden;
+
+        }
+        .topic {
+            display: block;
+            word-wrap: break-word;
+            word-break: break-all;
+            color: $text-color;
+            font-size: $font-size-web;
+            text-indent: -5px;
+            line-height: 1.8;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-sizing: border-box;
+            width: 50%;
+            float: left;
+            padding-right: 16px;
+            &:nth-child(even) {
+                border-left: 1px solid black;
+                padding-left: 16px;
+            }
+            &:hover {
+                color: $standard-blue;
+                text-decoration: underline;
+            }
+            //&:visited {
+            //    color: #6c4b3a;
+            //}
+        }
+        .recommended {
+            overflow: hidden;
+            .block-list-large {
+                box-sizing: border-box;
+                float: left;
+                width: 25%;
+                padding: 4px;
+            }
+        }
+
+        .recommended-item {
+            display: block;
+            position: relative;
+            width: 100%;
+            .recommended-cover {
+                width: 100%;
+            }
+            .recommended-description {
+                background: rgba(0,0,0,0.75);
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                line-height: 2;
+                box-sizing: border-box;
+                padding: 0 16px;
+                .category, .name {
+                    font-size: $font-size-web - 2px;
+                }
+                .category {
+                    color: $standard-blue;
+                    margin-right: 4px;
+                }
+                .name {
+                    color: $text-color;
+                }
+            }
+        }
+        .license-info {
+            color: #888888;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 24px
+        }
     }
 }
- 
-.fp-viewing-page1 .page1 {
-	img {
-		transform: translateY(0)
-	}
-	.content {
-		transform: translateX(0)
-	}
-}
 
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page1 {
-		.container {
-			width: 100%
-			img {
-				transform: translateY(0)
-			}
-			.content {
-				transform: translateY(0)
-				bottom: 0
-			}
-		}
-	}
-}
- 
-/* Page2
-* --------------------------------------- */
- 
-.page2 {
- 	background: url("../img/winkpax/bg-ps4.jpg") no-repeat center
- 	background-size: cover
- 	.container {
- 		width: 960px
- 		margin: auto
- 		margin-top: 150px
- 		.content {
- 			width: 50%
- 			text-align: left
- 			color: lighten(#666, 30)
- 			transform: translateY(-140px)
- 			transition: transform 1s		
- 		}
- 		img {
- 			width: 80%
- 		}
- 	}
- }
- 
-.fp-viewing-page2 .page2 {
-	.content {
-		transform: translateY(0)	
-	}
-}
+@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+    {'.theme-' + theme} {
+        font-family: Helvetica, Tahoma, Arial, "Noto Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", SimSun, "宋体", sans-serif;
+        background: $background;
+        .page-introduction {
+            display: none;
+        }
+        .license-info {
+            display: none;
+        }
 
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page2 {
-		.container {
-			width: 100%
-			.content {
-				margin: auto
-				transform: translateY(0)
-			}
-		}
-	}
-}
- 
-  /* Page3
- * --------------------------------------- */
- 
-.page3 {
- 	background: url("../img/winkpax/x-box.jpg") no-repeat center bottom
- 	background-size: 60% 60%
- 	.container {
- 		width: 960px
- 		margin: auto
-		margin-bottom: 280px
-		.content {
-			width: 70%
-			margin: auto
-			transform: translateY(-120px)
-			transition: transform 1s
-			h1 {
-				color: black
-			}
-		}
- 	}
- }
-
-.fp-viewing-page3 .page3 {
-	.content {
-		transform: translateY(0)	
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page3 {
-		.container {
-			width: 100%
-			.content {
-				transform: translateY(0)
-			}
-		}
-	}
-}
-
-/* Page4
-* --------------------------------------- */
-.page4 {
-	background: url("../img/winkpax/bg-situation@2x.jpg") no-repeat center
-	background-size: cover
-	.background {
-		height:auto
-		width:100%
-		position: absolute
-		top: 0
-		bottom: 0
-		img {
-			position: absolute
-			left: 0
-			top: 0
-			height: 100%
-			width: 100%
-			opacity: 0
-			&.active {
-				opacity: 1
-				transition: all 2s
-			}			
-		}
-	}
-	.container {
-		width: 960px
-		height: auto
-		position: absolute
-		top: 44px
-		bottom: 0
-		left: 0
-		right: 0
-		margin: auto
-		.content {
-			border-right: 1px dashed lighten(#666,20)
-			width: 20%
-			height: auto
-			position: absolute
-			top: 0
-			bottom: 0
-			left: 0
-			.description {
-				position: absolute
-				width: 100%
-				left: 120%
-				top: 100px
-				div {
-					position: absolute
-					color: lighten(#666,30)
-					opacity: 0
-					&.active {
-						opacity: 1
-						transition: all 2s 1s
-					}
-				}
-
-			}
-			#timeline {
-				height: 60%
-				position: absolute
-				right:0
-				left:auto
-				top:0
-				bottom:0
-				margin-top: auto
-				margin-bottom: auto
-				div {
-					height: 25%
-					width: 120px
-					font-size: 25px
-					position:relative
-					span {
-						display:block
-						height:25px
-						position:absolute
-						left:0
-						right:0
-						top:0
-						bottom:0
-						margin-top:auto
-						margin-bottom:10px
-						color: lighten(#666,30)				
-					}
-					div {
-						width:10px
-						height:0px
-						border-bottom: 1px solid white
-						position: absolute
-						top:auto
-						bottom:0
-						left: auto
-						right:0
-					}
-					&.active {
-						div {
-							width: 120px
-							border-bottom: 5px solid lighten(#666,30)
-						}
-					}	
-
-				}
-	
-			}		
-
-		}
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page4 {
-		.container {
-			width: 100%
-		}
-	}
-}
-
-/* Page5
-* --------------------------------------- */
-.page5 {
-	.container {
-		width: 960px		
-		margin: auto
-		.content {
-			width: 60%
-			margin: auto
-			h1 {
-				color: black
-			}
-		}
-		.img-container {
-			width: 100%
-			position: relative
-			img {
-				margin-top: 40px
-				width: 40%
-				transform: translateX(400px)
-				transition: all 1s			
-			}
-		}
-	}
-}
-
-.fp-viewing-page5 .page5 {
-	.container {
-		.img-container {
-			img {
-				transform: translateX(0)
-				width: 100%
-			}
-		}	
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page5 {
-		.container {
-			width: 100%
-			.img-container {
-				width: 100%
-				margin-top: 0
-				img {
-					transform: translateX(0)
-					width: 100%
-				}
-			}
-		}
-	}
-}
-
-/* Page6
-* --------------------------------------- */
-.page6 {
-	overflow: hidden
-	.container {
-		width: 100%
-		margin: auto
-		.content {
-			width: 50%
-			margin: auto
-			transform: translateY(200px)
-			transition: all 1s
-			h1 {
-				color: black
-			}
-		}
-		.img-container {
-			position: relative
-			img {
-				width: 100%
-				margin-top: 40px
-				transform: scale(1.8,1.8) translateY(-80px)
-				transition: all 1s
-			}
-		}
-	}
-}
-
-.fp-viewing-page6 .page6 {
-	.container {
-		.content {
-			transform: translateY(0)
-		}
-		.img-container {
-			img {
-				transform: scale(1,1)
-			}
-		}	
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page6 {
-		.container {
-			width: 100%
-			.content {
-				transform: translateY(0);
-			}
-			.img-container {
-				img {
-					transform: scale(1,1) translateY(0)
-				}
-			}
-		}
-	}
-}
-
-/* Page7
-* --------------------------------------- */
-.page7 {
-	background: url("../img/winkpax/bg-heat.jpg") no-repeat center
-	background-size: cover
-	.container {
-		width: 960px
-		margin: auto
-		.content {
-			width: 50%
-			text-align: left
-			float: right
-			color: lighten(#666, 30)
-			transform: translateX(-150px)
-			transition: transform 1s
-			
-		}
-	}
-}
-
-.fp-viewing-page7 .page7 {
-	.container {
-		.content {
-			transform: translateX(0)
-		}
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page7 {
-		.container {
-			width: 100%
-			.content {
-				transform: translateX(0)
-			}
-		}
-	}
-}
-
-/* Page8
-* --------------------------------------- */
-.page8 {
-	background: url("../img/winkpax/bg-handle-detail.jpg") no-repeat center
-	background-size: cover
-	.container {
-		width: 960px
-		margin: auto
-		margin-top: 10%
-		position: relative
-		.content {
-			width: 40%
-			margin-top: 100px
-			text-align: left
-			color: lighten(#666, 30)
-			position: absolute
-			z-index: 1
-			transform: translateX(-40%)
-			transition: transform 1s
-		}
-		img {
-			width: 55%
-			float: right
-			transform: translateX(40%)
-			transition: transform 1s
-		}
-	}
-}
-
-.fp-viewing-page8 .page8 {
-	.container {
-		.content {
-			transform: translateX(0)
-		}
-		img {
-			transform: translateX(0)
-		}
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page8 {
-		.container {
-			width: 100%
-			.content {
-				transform: translateX(0)
-				margin-left: 20px
-				margin-top: 0
-			}
-			img {
-				transform: translateX(0)
-			}
-		}
-	}
-}
-
-/* Page9
-* --------------------------------------- */
-
-/* Page10
-* --------------------------------------- */
-.page10 {
-	background: #111214 url("../img/winkpax/craft.png") no-repeat left bottom
-	background-size: 50%
-	.container {
-		width: 960px
-		margin: auto
-		.content {
-			width: 40%
-			margin: auto
-			position: relative
-			left: 150px
-			bottom: 100px
-			color: lighten(#666, 30)
-			text-align: right
-			transform: translateX(200px)
-			transition: transform 1s
-		}
-		
-	}
-}
-
-.fp-viewing-page10 .page10 {
-	.container {
-		.content {
-			transform: translateX(0)
-		}
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page10 {
-		.container {
-			width: 100%
-			.content {
-				left: 0
-				text-align: center
-				transform: translateX(0)
-			}
-		}
-
-	}
-}
-
-/* Page11
-* --------------------------------------- */
-.page11 {
-	overflow: hidden
-	.container {
-		width: 960px		
-		margin: auto
-		.content {
-			width: 70%
-			margin: auto
-			vertical-align: middle
-			transform: translateY(-100px)
-			transition: transform 1s
-			h1 {
-				color: black
-			}
-		}
-		.img-container {
-			width: 960px
-			img {
-				width: 90%
-				margin-top: 40px
-				transform: translateX(600px)
-				transition: transform 1s			
-			}
-		}
-	}
-}
-
-.fp-viewing-page11 .page11 {
-	.container {
-		.content {
-			transform: translateY(0)
-		}
-		.img-container {
-			img {
-				transform: translateX(0)
-			}
-		}	
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page11 {
-		.container {
-			width: 100%
-			.content {
-				transform: translateY(0)
-			}
-			.img-container {
-				width: 100%
-				img {
-					transform: translateX(0)
-				}
-			}
-		}
-	}
-}
-
-/* Page12
-* --------------------------------------- */
-.page12 {
-	background: url("../img/winkpax/bg-cpu.jpg") no-repeat center
-	background-size: cover
-	overflow: hidden
-	.container {
-		width: 960px
-		margin: auto
-		color: lighten(#666, 30)
-		.content {
-			position: relative
-			bottom: 200px
-			transform: translateY(-130px)
-			transition: transform 1s
-		}
-	}
-}
-
-.fp-viewing-page12 .page12 {
-	.container {
-		.content {
-			transform: translateY(0)
-		}
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page12 {
-		.container {
-			width: 100%
-			.content {
-				width: 80%
-				margin: auto
-				transform: translateY(0)
-			}
-		}
-	}
-}
-
-
-/* Page13
-* --------------------------------------- */
-.page13 {
-	overflow: hidden
-	.container {
-		width: 960px
-        height: 100%
-		margin: auto
-		transform: translateY(0)
-		transition: transform 0.5s
-        position: relative
-		.content {
-            width: 30%
-            margin-top: 30%
-            position: absolute
-            right: 100px
-			color: black
-            text-align: left
-			transform: translateX(400px)
-			transition: transform 1s
-			h1 {
-				color: black
-			}
-		}
-		img {
-			position: absolute
-            left: 0
-            height: 100%
-			transform: translateY(-400px)
-			transition: transform 1s
-		}
-
-	}
-	
-	.footer {
-		border-top: 1px solid lighten(#666, 55)
-		width: 960px
-		height: 60px
-		line-height: 60px
-		position: absolute
-		left: 0
-		right: 0
-		bottom: -160px
-		margin: auto
-		transform: translateY(0)
-		transition: transform 0.5s
-		#nav {
-			position: absolute
-			top: -60px
-			
-			a {
-				color: lighten(#666, 30)
-				text-decoration: none
-				padding-left: 15px
-				padding-right: 15px
-				font-size: 14px
-				border-right: 1px solid lighten(#666, 30)
-				&:nth-last-child(1) {
-					border-right: none
-				}
-				&:hover {
-					text-decoration: underline
-				}					
-			}
-		}
-		
-		#social-media {
-			position: absolute
-			top: -60px
-			right: 0
-            p {
-              display: none
-              color: lighten(#666,30)
+        .block-list {
+            float: left;
+            box-sizing: border-box;
+            &:nth-child(odd) {
+                padding: 4px 4px 4px 0;
             }
-			a {
-				position: relative
-				margin: 40px
-				img {
-					position: absolute
-					&.active {
-						opacity: 0
-						&:hover {
-							opacity: 1
-							transition: all 2s
-						}
-					}
-				}
-			}
-		}
-		#license {
-			font-size: 14px
-			text-align: left
-			color: lighten(#666, 30)
-		}
-	}
-}
-
-.fp-viewing-page13 .page13 {
-	.container {
-		.content {
-			transform: translateX(50px)
-		}
-		img {
-			transform: translateY(0)
-		}
-	}
-}
-
-
-.footer-active {
-	.container {
-		transform: translateY(-160px)
-		
-	}
-	.footer {
-		transform: translateY(-160px)
-		
-	}
-}
-
-/* 响应式
-* --------------------------------------- */
-@media screen and (max-width: 960px) {
-	.page13 {
-		.container {
-			width: 100%
-
-            transform: translateY(-200px)
-			.content {
-				transform: translateX(50px)
-			}
-			img {
-				transform: translateY(0)
-			}
-		}
-		.footer {
-			width: 90%
-            transform: translateY(-200px)
-            #nav a {
-              font-size: 12px
+            width: 25%;
+            padding: 0 4px;
+            &:nth-child(odd) {
+                padding: 0 4px;
             }
-            #social-media {
-              border-bottom: 1px solid lighten(#666,55)
-              left: 0
-              right: 0
-              top: -160px
-              line-height: 50px
-              p {
-                display: block
-              }
+
+        }
+
+        .block-list-large {
+            float: left;
+            box-sizing: border-box;
+            width: 50%;
+            margin: 0;
+            padding: 4px 0 4px 4px;
+            &:nth-child(odd) {
+                padding: 4px 4px 4px 0;
             }
-            #license {
-              margin-top: 10px
-              font-size: 12px
-              line-height: 30px
+        }
+
+        .title {
+            margin: 0 0 4px 0;
+            font-size: $font-size-mobile + 4px;
+            line-height: 2;
+            .show-more {
+                background: url("../../img/icon-eye.jpg") no-repeat left;
+                color: #fff;
+                float: right;
+                font-size: $font-size-mobile;
+                padding-left: 25px;
             }
-		}
-	}
+            .title-icon {
+                display: inline-block;
+                margin-right: 12px;
+                vertical-align: middle;
+            }
+            .title-text {
+                display: inline-block;
+                color: $text-color;
+                vertical-align: top;
+            }
+            i {
+                color: $standard-blue;
+                margin-right: 8px;
+            }
+        }
+
+        .content-block {
+            padding: 0 16px;
+            margin-bottom: 8px;
+        }
+
+        .content-container {
+            margin: 16px auto;
+            width: auto;
+            box-sizing: border-box;
+            .banner {
+                overflow: hidden;
+                .banner-item {
+                    position: relative;
+                    .ad-image {
+                        width: 100%;
+                    }
+                    .ad-description {
+                        width: 100%;
+                        height: 20px;
+                        line-height: 20px;
+                        background: rgba(0,0,0,0.75);
+                        color: $text-color;
+                        position: absolute;
+                        bottom: 0;
+                        font-size: 12px;
+                        text-align: center;
+                    }
+                }
+            }
+            .hot-wanted {
+                overflow: hidden;
+                .block-list-large {
+                    margin: 0;
+                }
+            }
+
+            .wanted-item {
+                display: table;
+                position: relative;
+                background: #22272d;
+                border-radius: 4px;
+                box-sizing: border-box;
+                padding: 6px 8px;
+                .award-amount {
+                    width: 80px;
+                    height: 44px;
+                    line-height: 44px;
+                    background: url("../../img/mobile/icon-money.png") no-repeat center;
+                    float: left;
+                    margin: 0 8px 0 0;
+                    span {
+                        width: 32px;
+                        display: inline-block;
+                        margin-left: 40px;
+                        text-align: center;
+                        font-weight: bold;
+                        color: $standard-orange;
+                    }
+                }
+                .wanted-item-content {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 100%;
+                    text-align: left;
+                    color: $text-color;
+                    font-size: $font-size-mobile;
+                    line-height: 1.4
+                }
+            }
+            .hot-topics {
+
+            }
+            .hot-topic-list {
+
+            }
+            .topic {
+                display: block;
+                word-wrap: break-word;
+                word-break: break-all;
+                color: $text-color;
+                font-size: $font-size-mobile;
+                text-indent: -5px;
+                line-height: 1.8;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &:hover {
+                    color: $active-text;
+                    text-decoration: underline;
+                }
+            }
+            .recommended {
+                overflow: hidden;
+            }
+
+            .recommended-item {
+                display: block;
+                position: relative;
+                width: 100%;
+                .recommended-cover {
+                    width: 100%;
+                }
+                .recommended-description {
+                    background: rgba(0,0,0,0.75);
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    text-align: center;
+                    line-height: 2;
+                    box-sizing: border-box;
+                    padding: 0 16px;
+                    .category, .name {
+                        font-size: $font-size-mobile;
+                    }
+                    .category {
+                        color: $standard-blue;
+                        margin-right: 4px;
+                    }
+                    .name {
+                        color: $text-color;
+                    }
+                }
+            }
+            .game-highlight {
+                overflow: hidden;
+
+            }
+            .game-highlight-item {
+                display: block;
+                background: #22272d;
+                overflow: hidden;
+                box-sizing: border-box;
+                padding: 10px;
+                border-radius: 4px;
+                width: 100%;
+                .game-icon {
+                    width: 32px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .game-name {
+                    display: inline-block;
+                    color: $text-color;
+                    margin: 0 0 0 4px;
+                    font-size: $font-size-mobile;
+                }
+            }
+        }
+    }
+
 }
+
+@media (max-width: $breakpoint-1) {
+    {'.theme-' + theme} {
+        font-family: Helvetica, Tahoma, Arial, "Noto Sans", "Noto Sans CJK SC", "Source Han Sans CN", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", SimSun, "宋体", sans-serif;
+        background: $background;
+        .page-introduction {
+            display: none;
+        }
+        .license-info {
+            display: none;
+        }
+
+        .block-list {
+            float: left;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 4px 0 4px 4px;
+            &:nth-child(odd) {
+                padding: 4px 4px 4px 0;
+            }
+        }
+
+        .block-list-large {
+            float: left;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            margin: 0 0 4px 0;
+            font-size: $font-size-mobile + 4px;
+            line-height: 2;
+            .show-more {
+                background: url("../../img/icon-eye.jpg") no-repeat left;
+                color: #fff;
+                float: right;
+                font-size: $font-size-mobile;
+                padding-left: 25px;
+            }
+            .title-icon {
+                display: inline-block;
+                margin-right: 12px;
+                vertical-align: middle;
+            }
+            .title-text {
+                display: inline-block;
+                color: $text-color;
+                vertical-align: top;
+            }
+            i {
+                color: $standard-blue;
+                margin-right: 8px;
+            }
+        }
+
+        .content-block {
+            padding: 0 8px;
+            margin-bottom: 8px;
+        }
+
+        .content-container {
+            margin: 16px auto;
+            width: auto;
+            box-sizing: border-box;
+            .banner {
+                overflow: hidden;
+                .banner-item {
+                    position: relative;
+                    .ad-image {
+                        width: 100%;
+                    }
+                    .ad-description {
+                        width: 100%;
+                        height: 20px;
+                        line-height: 20px;
+                        background: rgba(0,0,0,0.75);
+                        color: $text-color;
+                        position: absolute;
+                        bottom: 0;
+                        font-size: 12px;
+                        text-align: center;
+                    }
+                }
+            }
+            .hot-wanted {
+                overflow: hidden;
+                .block-list-large {
+                    margin-bottom: 1px;
+                }
+            }
+
+            .wanted-item {
+                display: table;
+                position: relative;
+                background: #22272d;
+                border-radius: 4px;
+                box-sizing: border-box;
+                padding: 6px 8px;
+                .award-amount {
+                    width: 80px;
+                    height: 44px;
+                    line-height: 44px;
+                    background: url("../../img/mobile/icon-money.png") no-repeat center;
+                    float: left;
+                    margin: 0 8px 0 0;
+                    span {
+                        width: 32px;
+                        display: inline-block;
+                        margin-left: 40px;
+                        text-align: center;
+                        font-weight: bold;
+                        color: $standard-orange;
+                    }
+                }
+                .wanted-item-content {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 100%;
+                    text-align: left;
+                    color: $text-color;
+                    font-size: $font-size-mobile;
+                    line-height: 1.4
+                }
+            }
+            .hot-topics {
+
+            }
+            .hot-topic-list {
+
+            }
+            .topic {
+                display: block;
+                word-wrap: break-word;
+                word-break: break-all;
+                color: $text-color;
+                font-size: $font-size-mobile;
+                text-indent: -5px;
+                line-height: 1.8;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &:hover {
+                    color: $active-text;
+                    text-decoration: underline;
+                }
+            }
+            .recommended {
+                overflow: hidden;
+            }
+
+            .recommended-item {
+                display: block;
+                position: relative;
+                width: 100%;
+                .recommended-cover {
+                    width: 100%;
+                }
+                .recommended-description {
+                    background: rgba(0,0,0,0.75);
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    text-align: center;
+                    line-height: 2;
+                    box-sizing: border-box;
+                    padding: 0 16px;
+                    .category, .name {
+                        font-size: $font-size-mobile;
+                    }
+                    .category {
+                        color: $standard-blue;
+                        margin-right: 4px;
+                    }
+                    .name {
+                        color: $text-color;
+                    }
+                }
+            }
+            .game-highlight {
+                overflow: hidden;
+
+            }
+            .game-highlight-item {
+                display: block;
+                background: #22272d;
+                overflow: hidden;
+                box-sizing: border-box;
+                padding: 10px;
+                border-radius: 4px;
+                width: 100%;
+                .game-icon {
+                    width: 32px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .game-name {
+                    display: inline-block;
+                    color: $text-color;
+                    margin: 0 0 0 4px;
+                    font-size: $font-size-mobile;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
